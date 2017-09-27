@@ -1,0 +1,334 @@
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (124.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (121.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20170927181043)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170927181043"]]
+  [1m[35m (153.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-27 18:11:28.811667"], ["updated_at", "2017-09-27 18:11:28.811667"]]
+  [1m[35m (137.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:35:36 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 1165ms (Views: 1151.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:35:38 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:35:38 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:35:44 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:11 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 492ms (Views: 480.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:13 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:13 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:13 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:16 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:36 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 422ms (Views: 412.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:45 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:45 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:39:46 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:40:12 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 155ms (Views: 150.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:40:13 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:40:13 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:40:18 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:40:49 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 515ms (Views: 504.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 200.12.185.152 at 2017-09-27 20:41:17 +0000
+Cannot render console from 200.12.185.152! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:24:49 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 648ms (Views: 630.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-27 17:24:53 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 128ms (Views: 81.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-09-27 17:24:58 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 62ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-27 17:25:22 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VR+T11JmD2gwTgEZPmxqdDOnptHAWoEXvTgaT4WyDYxUjQ4ZSRgGY9wb9mdM96akbZj5vbmoArTSBwE3udiLkg==", "user"=>{"email"=>"kdfds@asda.sdd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kdfds@asda.sdd"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "kdfds@asda.sdd"], ["encrypted_password", "$2a$11$ZUWUonVFhZK1eJC.g0/R4ORh.l2eDaJPDr3SDYIdbiWxCASk7miKG"], ["created_at", "2017-09-27 22:25:22.540371"], ["updated_at", "2017-09-27 22:25:22.540371"]]
+  [1m[35m (71.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-09-27 22:25:22.617061"], ["last_sign_in_at", "2017-09-27 22:25:22.617061"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-09-27 22:25:22.618851"], ["id", 1]]
+  [1m[35m (56.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 375ms (ActiveRecord: 130.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:25:22 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-27 17:25:43 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eZtS7KzBYrd8rtwIX20DMQ/w8EaxTzIoC3HirAhrHgVVCfC3p6RnkrJEFzzUdAhBP8qV2rkpQMxZDOJKPokD/Q=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:25:43 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-09-27 17:27:57 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (4.6ms)
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 626ms (Views: 544.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-27 17:28:20 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"62etmtZNOoSyJAoJPDYl2DlVVCsZu9txtFKN56j0X/xcdgaUl5ObqYLvcgZHUdyVx6keJHqLex5vAv3nQBV9ug==", "user"=>{"email"=>"jvalen92@gmail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jvalen92@gmail"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jvalen92@gmail"], ["encrypted_password", "$2a$11$mCw3WvqocjTIzXsVjwzzWuGam952R0daK6u6DYQklZhxBoHCfKudm"], ["created_at", "2017-09-27 22:28:21.141390"], ["updated_at", "2017-09-27 22:28:21.141390"]]
+  [1m[35m (63.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-09-27 22:28:21.209661"], ["last_sign_in_at", "2017-09-27 22:28:21.209661"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2017-09-27 22:28:21.211585"], ["id", 2]]
+  [1m[35m (55.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 354ms (ActiveRecord: 120.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:28:21 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-27 17:28:26 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v7NoA1aSe8qg3n2oGVK4YA+1a0DZqDo92ez9myWbWw0IosMNF0za55AVBadiNUEt8UkhT7qYmlICvI2bzXp5Sw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:28:27 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-27 17:28:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /home/sebas/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 93ms (Views: 89.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-27 17:28:34 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eR9A5H81QaK9uBafTZQsx2qfX2EAFgpAVCK7AoVZAdhAIvDCZZcqk2e1Bn7uDHdtCRAMy7QuJSQkFNI52vMS8Q==", "user"=>{"email"=>"jvalen92@gmail", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jvalen92@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-09-27 22:28:35.133643"], ["sign_in_count", 2], ["updated_at", "2017-09-27 22:28:35.135144"], ["id", 2]]
+  [1m[35m (80.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 288ms (ActiveRecord: 81.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 17:28:35 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.6ms)
+
+
